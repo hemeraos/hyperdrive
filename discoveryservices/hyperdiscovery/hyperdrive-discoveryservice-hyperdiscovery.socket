@@ -1,0 +1,8 @@
+[Unit]
+Description=Hyperdrive Hyperdiscovery Discovery service socket
+
+[Socket]
+ListenDatagram=44389
+
+[Install]
+WantedBy=sockets.target

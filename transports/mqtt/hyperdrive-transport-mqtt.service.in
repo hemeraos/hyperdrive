@@ -1,0 +1,9 @@
+[Unit]
+Description=Hyperdrive MQTT Transport
+Requires=hyperdrive.service
+After=hyperdrive.service
+After=network.target
+
+[Service]
+ExecStart=@INSTALL_BIN_DIR@/hyperdrive-transport-mqtt
+User=mqtt-transport

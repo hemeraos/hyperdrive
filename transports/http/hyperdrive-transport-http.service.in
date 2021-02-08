@@ -1,0 +1,9 @@
+[Unit]
+Description=Hyperdrive HTTP Transport
+Requires=hyperdrive.service
+After=hyperdrive.service
+After=sockets.target
+
+[Service]
+ExecStart=@INSTALL_BIN_DIR@/hyperdrive-transport-http
+User=http-transport

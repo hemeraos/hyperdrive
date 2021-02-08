@@ -1,0 +1,7 @@
+[Unit]
+Description=Hyperdrive Hyperdiscovery Discovery service
+Requires=hyperdrive-discoveryservice-hyperdiscovery.socket
+After=syslog.target
+
+[Service]
+ExecStart=@INSTALL_BIN_DIR@/hyperdrive-discoveryservice-hyperdiscovery

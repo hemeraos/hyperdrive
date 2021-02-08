@@ -1,0 +1,17 @@
+[Unit]
+Description=Pairs the Gateway with a remote Astarte endpoint
+Before=hyperdrive-transport-astarte.service
+Before=astarte-gateway.service
+After=network.target
+# Activate only if the certificate chain or the config file is missing.
+ConditionPathExists=|!/var/lib/astarte/gateway/mosquitto.conf
+ConditionPathExists=|!/var/lib/astarte/gateway/mqtt_broker.ca
+ConditionPathExists=|!/var/lib/astarte/gateway/mqtt_broker.crt
+
+[Service]
+Type=oneshot
+# Don't overdo it: Fail after 30 seconds if no connection is available
+TimeoutSec=30
+Environment=HOME='/tmp'
+ExecStart=@INSTALL_BIN_DIR@/astarte-gateway-pairing-helper
+User=astarte-transport

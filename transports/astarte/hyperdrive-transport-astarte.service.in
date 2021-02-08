@@ -1,0 +1,12 @@
+[Unit]
+Description=Hyperdrive Astarte Transport
+Requires=hyperdrive.service
+After=hyperdrive.service
+# If a gateway is installed, we want it to be started before the transport.
+Wants=astarte-gateway.service
+After=astarte-gateway.service
+After=network.target
+
+[Service]
+ExecStart=@INSTALL_BIN_DIR@/hyperdrive-transport-astarte
+User=astarte-transport

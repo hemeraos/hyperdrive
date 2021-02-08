@@ -1,0 +1,12 @@
+[Unit]
+Description=Hyperdrive
+Requires=hyperdrive.socket
+After=syslog.target
+Before=gravity-center.service
+
+[Service]
+Type=notify
+ExecStart=@INSTALL_BIN_DIR@/hyperdrive
+User=hyperdrive
+
+OOMScoreAdjust=-800

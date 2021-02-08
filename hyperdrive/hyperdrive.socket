@@ -1,0 +1,19 @@
+[Unit]
+Description=Hyperdrive Sockets
+
+[Socket]
+# Gates socket
+ListenStream=/run/hyperdrive/gates
+# Transports socket
+ListenStream=/run/hyperdrive/transports
+# Discovery clients socket
+ListenStream=/run/hyperdrive/discovery/clients
+# Discovery services socket
+ListenStream=/run/hyperdrive/discovery/services
+
+User=hyperdrive
+Group=hyperdrive
+#SocketMode=0660
+
+[Install]
+WantedBy=sockets.target

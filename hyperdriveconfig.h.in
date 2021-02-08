@@ -1,0 +1,27 @@
+#ifndef HYPERDRIVECONFIG_H
+#define HYPERDRIVECONFIG_H
+
+namespace Hyperdrive {
+
+namespace StaticConfig {
+
+Q_DECL_CONSTEXPR const char *hyperdriveDiscoveryServicesPath() { return "@INSTALL_DISCOVERYSERVICES_DIR@"; }
+Q_DECL_CONSTEXPR const char *hyperdriveDiscoveryServicesSocketPath() { return "/run/hyperdrive/discovery/services"; }
+Q_DECL_CONSTEXPR const char *hemeraDataDir() { return "@HA_SDK_DATA_DIR@"; }
+Q_DECL_CONSTEXPR const char *hyperspaceConfigurationDir() { return "/etc/hemera/hyperspace"; }
+Q_DECL_CONSTEXPR const char *hyperdriveDataDir() { return "@INSTALL_HYPERDRIVE_DATA_DIR@"; }
+Q_DECL_CONSTEXPR const char *transportHTTPDataDir() { return "@INSTALL_TRANSPORT_HTTP_DATA_DIR@"; }
+Q_DECL_CONSTEXPR const char *transportAstarteDataDir() { return "@INSTALL_TRANSPORT_ASTARTE_DATA_DIR@"; }
+Q_DECL_CONSTEXPR const char *hyperdriveSecurityRestrictionsPath() { return "@HYPERDRIVE_SECURITY_RESTRICTIONS_PATH@"; }
+Q_DECL_CONSTEXPR const char *hyperdriveSecurityExceptionsPath() { return "@HYPERDRIVE_SECURITY_EXCEPTIONS_PATH@"; }
+Q_DECL_CONSTEXPR const char *hyperdriveAuthAPIsConfsPath() { return "@HYPERDRIVE_AUTHAPISCONFS_PATH@"; }
+constexpr QLatin1String hyperspaceInterfacesDir() { return QLatin1String("@HYPERSPACE_INTERFACES_DIR@"); }
+constexpr int hyperdriveMajorVersion() { return @HYPERDRIVE_MAJOR_VERSION@; }
+constexpr int hyperdriveMinorVersion() { return @HYPERDRIVE_MINOR_VERSION@; }
+constexpr int hyperdriveReleaseVersion() { return @HYPERDRIVE_RELEASE_VERSION@; }
+
+}
+
+}
+
+#endif

@@ -1,0 +1,8 @@
+[Unit]
+Description=Hyperdrive HTTP Transport SSL Certificate generator
+After=syslog.target
+
+[Service]
+Type=oneshot
+User=http-transport
+ExecStart=/bin/sh -c "[ -e ~/ssl.pem -a -e ~/ssl.key ] || openssl req -new -batch -x509 -days 365 -sha256 -nodes -out ~/ssl.pem -keyout ~/ssl.key && chmod 0600 ~/ssl.*"

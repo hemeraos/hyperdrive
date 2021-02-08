@@ -1,0 +1,14 @@
+[Unit]
+Description=Local MQTT gateway, bridged to a remote Astarte installation
+Requires=astarte-gateway-pairing-helper.service
+After=astarte-gateway-pairing-helper.service
+Before=hyperdrive-transport-astarte.service
+After=network.target
+
+[Service]
+# If the pairing failed, bring up a simple default gateway.
+ExecStart=/usr/sbin/mosquitto -c /var/lib/astarte/gateway/mosquitto.conf
+User=astarte-transport
+
+[Install]
+WantedBy=network.target
